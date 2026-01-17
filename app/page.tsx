@@ -458,25 +458,27 @@ export default function App() {
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-1 mb-8 bg-slate-200 p-1 rounded-lg w-fit">
-          {[
-            { id: "overview", label: "Executive Summary", icon: BarChart3 },
-            { id: "issues", label: "Detailed Findings", icon: AlertTriangle },
-            { id: "roadmap", label: "Strategy & Checklist", icon: ListTodo },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                activeTab === tab.id
-                  ? "bg-white text-indigo-600 shadow-sm"
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-300/50"
-              }`}
-            >
-              <tab.icon size={16} />
-              {tab.label}
-            </button>
-          ))}
+        <div className="flex justify-center md:justify-start mb-8">
+          <div className="flex flex-wrap justify-center gap-1 bg-slate-200 p-1 rounded-lg w-fit">
+            {[
+              { id: "overview", label: "Executive Summary", icon: BarChart3 },
+              { id: "issues", label: "Detailed Findings", icon: AlertTriangle },
+              { id: "roadmap", label: "Strategy & Checklist", icon: ListTodo },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                className={`flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-all ${
+                  activeTab === tab.id
+                    ? "bg-white text-indigo-600 shadow-sm"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-300/50"
+                }`}
+              >
+                <tab.icon size={16} className="shrink-0" />
+                <span className="whitespace-nowrap">{tab.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Content Area */}
