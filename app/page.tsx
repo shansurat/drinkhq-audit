@@ -440,7 +440,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="bg-slate-200 p-1 rounded-lg flex items-center shrink-0">
+            <div className="bg-slate-200 p-1 rounded-lg flex items-center shrink-0 w-fit self-start md:self-auto">
               <button
                 onClick={() => setDevice("mobile")}
                 className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-all ${device === "mobile" ? "bg-white text-indigo-600 shadow-sm" : "text-slate-600 hover:text-slate-800"}`}
